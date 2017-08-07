@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <h1 v-if="ok">yes</h1>
+    <h1 v-else>NO</h1>
+
+    <div v-if="Math.random()>2">
+        Now you see me
+    </div>
+    <div v-else>
+        Now you don't
+    </div>
+
+    <template v-if="loginType === 'username'">
+        <label>Username</label>
+        <input placeholder="Enter your username">
+    </template>
+    <template v-else>
+        <label>Email</label>
+        <input placeholder="Enter your email address">
+    </template>
+    <button v-on:cick="changeType">Toggle</button>
+    <!--v-else 元素必须紧跟在 v-if 或者 v-else-if 元素的后面——否则它将不会被识别。-->
+
+</div>
+
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data: {
+            ok: true,
+            loginType: 'username'
+        },
+        methods: {
+            changetype: function () {
+//                if (this.loginType == 'username') {
+//                    this.loginType = 'email'
+//                } else {
+//                    this.loginType = 'username'
+//                }
+                this.loginType = 'email'
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

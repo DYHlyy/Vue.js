@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div v-bind:class="{active:isActive}"></div>
+<!--上面的语法表示 classactive 的更新将取决于数据属性 isActive 是否为真值-->
+
+
+<div id="app" v-bind:style="styleObject">hello world</div>
+
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data: {
+            styleObject: {
+                color: 'red',
+                fontSize: '30px'
+            }
+        }
+    });
+</script>
+</body>
+</html>
